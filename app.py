@@ -142,7 +142,7 @@ def inject_user():
     return dict(user=user)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':  # 判断是否是 POST 请求
         if not current_user.is_authenticated:  # 如果当前用户未认证
